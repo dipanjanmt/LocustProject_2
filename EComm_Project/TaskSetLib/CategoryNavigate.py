@@ -1,6 +1,6 @@
 from locust import task, SequentialTaskSet
-from CommonLib.LogModule import *
-from CommonLib.UtilHelper import UtilHelper
+from EComm_Project.CommonLib.LogModule import *
+from EComm_Project.CommonLib.UtilHelper import UtilHelper
 
 
 class CategoryNavigate(SequentialTaskSet):

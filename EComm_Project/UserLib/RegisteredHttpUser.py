@@ -1,9 +1,9 @@
 from locust import between, clients
-from CommonLib.LogModule import *
-from CommonLib.UtilHelper import UtilHelper
+from EComm_Project.CommonLib.LogModule import *
+from EComm_Project.CommonLib.UtilHelper import UtilHelper
 from locust.exception import StopUser
-from CommonLib.UserLoader import UserLoader
-from UserLib.AbstractUser import AbstractUser
+from EComm_Project.CommonLib.UserLoader import UserLoader
+from EComm_Project.UserLib.AbstractUser import AbstractUser
 
 
 class RegisteredHttpUser(AbstractUser):
@@ -32,11 +32,3 @@ class RegisteredHttpUser(AbstractUser):
     def on_stop(self):
         # TODO: Logout user from server when load test ends
         pass
-
-
-
-
-
-
-
-

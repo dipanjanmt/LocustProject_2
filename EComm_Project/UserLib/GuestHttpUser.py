@@ -1,7 +1,7 @@
 from locust import between
-from CommonLib.UtilHelper import UtilHelper
-from CommonLib.LogModule import LogType, Logger
-from UserLib.AbstractUser import AbstractUser
+from EComm_Project.CommonLib.UtilHelper import UtilHelper
+from EComm_Project.CommonLib.LogModule import LogType, Logger
+from EComm_Project.UserLib.AbstractUser import AbstractUser
 
 
 class GuestHttpUser(AbstractUser):
@@ -20,4 +20,3 @@ class GuestHttpUser(AbstractUser):
 
     def on_stop(self):
         pass
-

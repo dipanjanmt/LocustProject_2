@@ -1,5 +1,5 @@
 from locust import task, SequentialTaskSet
-from CommonLib.UtilHelper import UtilHelper
+from EComm_Project.CommonLib.UtilHelper import UtilHelper
 
 
 class ViewCart(SequentialTaskSet):
