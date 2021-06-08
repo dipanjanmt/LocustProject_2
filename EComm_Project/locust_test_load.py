@@ -15,6 +15,7 @@ from CommonLib.EventInfluxHandlers import EventInfluxHandlers
 def on_test_start(**kwargs):
     if kwargs['environment'].parsed_options.logfile:
         Logger.init_logger(__name__, kwargs['environment'].parsed_options.logfile)
+    # below 18th line code need to be removed if we want to load users uniquely from another machine or workers
     UserLoader.load_users()
     EventInfluxHandlers.init_influx_client()
     Logger.log_message("......... Initiating Load Test .......")

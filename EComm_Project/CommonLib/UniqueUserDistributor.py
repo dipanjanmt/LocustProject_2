@@ -25,8 +25,11 @@ class UserDistributor:
             return user_obj
 
 
+# ip should be the machine ip[form where we need to call this method]
 server = SimpleXMLRPCServer(("192.168.1.119", 8000))
 UserDistributor.load_users()
 print("\nUser Distributor Service Started ... Listening On Port 8000")
 server.register_function(UserDistributor.get_user, "get_user")
 server.serve_forever()
+
+# Terminal[server machine/instance 1] -> python3 CommonLib/UniqueUserDistributor.py

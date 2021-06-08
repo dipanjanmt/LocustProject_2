@@ -6,6 +6,12 @@ from EComm_Project.CommonLib.UserLoader import UserLoader
 from EComm_Project.UserLib.AbstractUser import AbstractUser
 
 
+# import xmlrpc.client
+
+# need to be used if we want to load users uniquely from another machine or workers
+# user_proxy = xmlrpc.client.ServerProxy('http://server-ip-address')
+
+
 class RegisteredHttpUser(AbstractUser):
     wait_time = between(1, 2)
     abstract = True
@@ -18,6 +24,8 @@ class RegisteredHttpUser(AbstractUser):
 
     def on_start(self):
         # TODO: Fetch one user from user list and login, store cookie and user info
+        # need to be used if we want to load users uniquely from another machine or workers
+        # user_obj = user_proxy.get_user()
         user_obj = UserLoader.get_user()
         form_data = {'email': user_obj['username'], 'passwd': user_obj['password'],
                      'back': 'my-account', 'SubmitLogin': ''}
